@@ -1,5 +1,6 @@
 ﻿using Owin;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace OWinSelfHostedService
 {
@@ -12,6 +13,7 @@ namespace OWinSelfHostedService
             config.MapHttpAttributeRoutes();
             //TODO: Uncomment if you want to support CORS (Cross-origin Resource Sharing)
             //config.EnableCors();
+            //config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
 
             appBuilder.UseWebApi(config);
             config.EnsureInitialized();
